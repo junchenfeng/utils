@@ -200,6 +200,9 @@ set fileencodings=utf-8,ucs-bom,cp936,gbk,gb2312,gb18030,big5,latin1
  inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
  inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
+" Install nerdTree
+" cd ~/.vim/bundle
+" git clone git://github.com/scrooloose/nerdtree.git
 " Settings for nerdTree
 map <C-n> :NERDTreeToggle<CR>
 
