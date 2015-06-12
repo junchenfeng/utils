@@ -1,6 +1,23 @@
 # utils
 Jc's personal toolbox
 
-# vimrc
-install by following the instruction in the vimrc file
-The two main package is jedi-vim and nerdTree
+
+# vim-install.sh
+
+prepare for the .vimrc. 
+
+OS Yosimite needs to install wget 
+
+# .vimrc
+## nerdtree
+file system management
+
+## jedi-vim
+auto-completion
+
+## powerline
+better status report
+
+## ctrlp
+fast file surfing
+
