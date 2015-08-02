@@ -40,6 +40,13 @@ git clone https://github.com/kien/ctrlp.vim.git
 git clone git://github.com/Valloric/YouCompleteMe.git
 cd YouCompleteMe
 git submodule update --init --recursive
+# use cmake to build
+brew install cmake
+cd ~
+mkdir ycm_build
+cd ycm_build
+cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+make ycm_support_libs
 
 # folding
 mkdir -p ~/.vim/ftplugin
