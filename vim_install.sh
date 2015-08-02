@@ -36,7 +36,10 @@ git clone git://github.com/Lokaltog/vim-powerline.git
 cd ~/.vim/bundle
 git clone https://github.com/kien/ctrlp.vim.git
 
-
+# youCompleteMe: an fuzzy auto completion plugin
+git clone git://github.com/Valloric/YouCompleteMe.git
+cd YouCompleteMe
+git submodule update --init --recursive
 
 # folding
 mkdir -p ~/.vim/ftplugin
