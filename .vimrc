@@ -76,7 +76,8 @@ set fileencodings=utf-8,ucs-bom,cp936,gbk,gb2312,gb18030,big5,latin1
 
 
 " Color scheme
- set t_Co=256 color wombat256mod
+ set t_Co=256 
+ color wombat256mod
 
 
 " Enable syntax highlighting
