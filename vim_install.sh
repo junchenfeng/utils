@@ -31,6 +31,9 @@ git clone git://github.com/scrooloose/nerdtree.git
 cd ~/.vim/bundle
 git clone git://github.com/Lokaltog/vim-powerline.git
 
+# syntastic + flake8
+cd ~/.vim/bundle && \
+git clone https://github.com/scrooloose/syntastic.git
 
 # ctrlp
 cd ~/.vim/bundle
