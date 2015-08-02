@@ -13,14 +13,14 @@ all scripts works for OSX for sure. youCompleteMe on Linux please refer to the o
 file system management
 
 ## jedi-vim
-function explanation
+function explanation. Most importantly, use <lead,b> to activate debug.
 
 ## YouCompleteMe
 Fuzzy auto completion
 
 ## powerline
-better status report
+Better status report for the vim itself
 
-## ctrlp
-fast file surfing
-
+## syntanstic + flake8
+PEP8 support for python script
+ 
