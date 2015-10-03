@@ -12,10 +12,6 @@ curl -so ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vi
 
 
 ### Python IDE
-
-
-
-
 # jedi-vim
 cd ~/.vim/bundle
 git clone git://github.com/davidhalter/jedi-vim.git
@@ -56,6 +52,5 @@ mkdir -p ~/.vim/ftplugin
 wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
 
 
-# ipdb for debugging
-sudo pip install ipdb
+
 
