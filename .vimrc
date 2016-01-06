@@ -89,12 +89,17 @@ set fileencodings=utf-8,ucs-bom,cp936,gbk,gb2312,gb18030,big5,latin1
 
 " Showing line numbers and length
  set number  " show line numbers
- set tw=79   " width of document (used by gd)
+ "set tw=79   " width of document (used by gd)
  set nowrap  " don't automatically wrap on load
  set fo-=t   " don't automatically wrap text when typing
  set colorcolumn=80
  highlight ColorColumn ctermbg=233
-
+set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
+set tabstop=4     " a hard TAB displays as 4 columns
+set expandtab     " insert spaces when hitting TABs
+set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
+set shiftround    " round indent to multiple of 'shiftwidth'
+set autoindent    " align the new line indent with the previous line
 
 " easier formatting of paragraphs
  vmap Q gq
@@ -192,3 +197,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
