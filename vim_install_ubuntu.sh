@@ -21,25 +21,29 @@ git submodule update --init --depth 1
 
 # nerdtree
 cd ~/.vim/bundle
-git clone git://github.com/scrooloose/nerdtree.git
+git clone git://github.com/scrooloose/nerdtree.git --depth 1
 
 # power line
 cd ~/.vim/bundle
-git clone git://github.com/Lokaltog/vim-powerline.git
+git clone git://github.com/Lokaltog/powerline.git --depth 1
 
 # syntastic + flake8
 cd ~/.vim/bundle && \
-git clone https://github.com/scrooloose/syntastic.git
+git clone https://github.com/scrooloose/syntastic.git --depth 1
 
 # ctrlp
 cd ~/.vim/bundle
-git clone https://github.com/kien/ctrlp.vim.git
+git clone https://github.com/kien/ctrlp.vim.git --depth 1
 
 # youCompleteMe: an fuzzy auto completion plugin
-git clone --depth 1 git://github.com/Valloric/YouCompleteMe.git # no need for history
-cd YouCompleteMe
-git submodule update --init --recursive --depth 1
+# install pre-requisite
+apt-get install build-essential cmake
+apt-get install python-dev python3-dev
 
+# get the package
+git clone --depth 1 git://github.com/Valloric/YouCompleteMe.git 
+cd YouCompleteMe
+git submodule update --init --recursive
 # build
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py
