@@ -16,8 +16,7 @@ curl -so ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vi
 cd ~/.vim/bundle
 git clone git://github.com/davidhalter/jedi-vim.git
 cd ~/.vim/bundle/jedi-vim  
-git submodule update --init
-
+git submodule update --init --depth 1
 
 # nerdtree
 cd ~/.vim/bundle
@@ -36,9 +35,9 @@ cd ~/.vim/bundle
 git clone https://github.com/kien/ctrlp.vim.git
 
 # youCompleteMe: an fuzzy auto completion plugin
-git clone git://github.com/Valloric/YouCompleteMe.git
+git clone --depth 1 git://github.com/Valloric/YouCompleteMe.git
 cd YouCompleteMe
-git submodule update --init --recursive
+git submodule update --init --recursive --depth 1
 # use cmake to build
 brew install cmake
 cd ~
