@@ -59,4 +59,7 @@ Better status report for the vim itself
 
 ## syntanstic + flake8
 PEP8 support for python script
- 
+
+
+## Python initialization
+Anaconda is an all-in-one solution.
