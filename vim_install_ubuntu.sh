@@ -12,28 +12,18 @@ curl -so ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vi
 
 
 ### Python IDE
-# jedi-vim
-cd ~/.vim/bundle
-git clone git://github.com/davidhalter/jedi-vim.git
-cd ~/.vim/bundle/jedi-vim  
-git submodule update --init --depth 1
 
+cd ~/.vim/bundle
 
 # nerdtree
-cd ~/.vim/bundle
 git clone git://github.com/scrooloose/nerdtree.git --depth 1
 
 # power line
-cd ~/.vim/bundle
 git clone git://github.com/Lokaltog/powerline.git --depth 1
 
-# syntastic + flake8
-cd ~/.vim/bundle && \
-git clone https://github.com/scrooloose/syntastic.git --depth 1
+# ale, a replacement for syntastic in Vim 8. Avoid stuck on error checking
+git clone https://github.com/w0rp/ale.git --depth 1
 
-# ctrlp
-cd ~/.vim/bundle
-git clone https://github.com/kien/ctrlp.vim.git --depth 1
 
 # youCompleteMe: an fuzzy auto completion plugin
 # install pre-requisite

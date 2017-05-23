@@ -1,18 +1,12 @@
+" Adpot .vimrc file by Martin Brochhaus
+
+
 "encoding 
 set fileencodings=utf-8,ucs-bom,cp936,gbk,gb2312,gb18030,big5,latin1
 
 
-" Adpot .vimrc file by Martin Brochhaus
 " Automatic reloading of .vimrc
  autocmd! bufwritepost .vimrc source %
-
-
-" Better copy & paste
-" When you want to paste large blocks of code into vim, press F2 before you
-" paste. At the bottom you should see ``-- INSERT (paste) --``.
-
- set pastetoggle=<F2>
- set clipboard=unnamed
 
 
 " Mouse and backspace
@@ -24,21 +18,6 @@ set fileencodings=utf-8,ucs-bom,cp936,gbk,gb2312,gb18030,big5,latin1
 " I like to have it here becuase it is easier to reach than the default and
 " it is next to ``m`` and ``n`` which I use for navigating between tabs.
  let mapleader = ","
-
-
-" Bind nohl
-" Removes highlight of your last search
-" ``<C>`` stands for ``CTRL`` and therefore ``<C-n>`` stands for ``CTRL+n``
- noremap <C-n> :nohl<CR>
- vnoremap <C-n> :nohl<CR>
- inoremap <C-n> :nohl<CR>
-
-
-" Quicksave command
- noremap <C-Z> :update<CR>
- vnoremap <C-Z> <C-C>:update<CR>
- inoremap <C-Z> <C-O>:update<CR>
-
 
 " Quick quit command
  noremap <Leader>e :quit<CR>  " Quit current window
@@ -53,13 +32,6 @@ set fileencodings=utf-8,ucs-bom,cp936,gbk,gb2312,gb18030,big5,latin1
  map <c-h> <c-w>h
 
 
-" easier moving between tabs
- map <Leader>n <esc>:tabprevious<CR>
- map <Leader>m <esc>:tabnext<CR>
-
-
-" map sort function to a key
- vnoremap <Leader>s :sort<CR>
 
 
 " easier moving of code blocks
@@ -69,10 +41,6 @@ set fileencodings=utf-8,ucs-bom,cp936,gbk,gb2312,gb18030,big5,latin1
  vnoremap > >gv  " better indentation
 
 
-" Show whitespace
-" MUST be inserted BEFORE the colorscheme command
- ""autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
- ""au InsertLeave * match ExtraWhitespace /\s\+$/
 
 
 " Color scheme
@@ -89,21 +57,10 @@ set fileencodings=utf-8,ucs-bom,cp936,gbk,gb2312,gb18030,big5,latin1
 
 " Showing line numbers and length
  set number  " show line numbers
- "set tw=79   " width of document (used by gd)
  set nowrap  " don't automatically wrap on load
  set fo-=t   " don't automatically wrap text when typing
  set colorcolumn=80
  highlight ColorColumn ctermbg=233
-set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
-set tabstop=4     " a hard TAB displays as 4 columns
-set expandtab     " insert spaces when hitting TABs
-set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
-set shiftround    " round indent to multiple of 'shiftwidth'
-set autoindent    " align the new line indent with the previous line
-
-" easier formatting of paragraphs
- vmap Q gq
- nmap Q gqap
 
 
 " Useful settings
@@ -111,12 +68,13 @@ set autoindent    " align the new line indent with the previous line
  set undolevels=700
 
 
-" Real programmers don't use TABs but spaces
+" Indent behavior 
  set tabstop=4
  set softtabstop=4
  set shiftwidth=4
  set shiftround
  set expandtab
+ set autoindent    " align the new line indent with the previous line
 
 
 " Make search case insensitive
@@ -132,6 +90,10 @@ set autoindent    " align the new line indent with the previous line
  set nowritebackup
  set noswapfile
 
+" Python folding
+" set nofoldenable
+set foldmethod=indent
+set foldlevel=99
 
 " Setup Pathogen to manage your plugins
  call pathogen#infect()
@@ -146,19 +108,7 @@ set autoindent    " align the new line indent with the previous line
  set laststatus=2
 
 
-
-" Settings for ctrlp
- let g:ctrlp_max_height = 30
- set wildignore+=*.pyc
- set wildignore+=*_build/*
- set wildignore+=*/coverage/*
-
-
-" Settings for jedi-vim
- let g:jedi#usages_command = "<leader>z"
- let g:jedi#popup_on_dot = 0
- let g:jedi#popup_select_first = 0
- let g:jedi#completions_command = "<C-f>"
+" shortcut
  map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
  
@@ -179,24 +129,11 @@ set autoindent    " align the new line indent with the previous line
  inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
  inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
-" Install nerdTree
+" Nerd Tree
 map <C-n> :NERDTreeToggle<CR>
 
 
-" Python folding
- set nofoldenable
 
-
-
-" syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 
 autocmd InsertEnter * set cul

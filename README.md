@@ -48,18 +48,11 @@ For other problems of YouCompleteMe, please refer to the [original documentation
 ## nerdtree
 file system management
 
-## jedi-vim
-function explanation. Most importantly, use <lead,b> to activate debug.
-
 ## YouCompleteMe
 Fuzzy auto completion
 
 ## powerline
 Better status report for the vim itself
 
-## syntanstic + flake8
-PEP8 support for python script
-
-
-## Python initialization
-Anaconda is an all-in-one solution.
+## ale
+Async syntax check for Vim 8
