@@ -90,14 +90,42 @@ set fileencodings=utf-8,ucs-bom,cp936,gbk,gb2312,gb18030,big5,latin1
  set nowritebackup
  set noswapfile
 
-" Python folding
-" set nofoldenable
-set foldmethod=indent
-set foldlevel=99
+
+
+" Folding {{{
+set foldenable
+if &diff | set foldmethod=diff | else | set foldmethod=syntax | endif
+set foldlevel=0
+set foldopen=block,hor,tag,percent,mark,quickfix
+
+function! FoldText() " {{{
+    let line = getline(v:foldstart)
+
+    let nucolwidth = &fdc + &number * &numberwidth
+    let windowwidth = winwidth(0) - nucolwidth - 3
+
+    " expand tabs into spaces
+    let onetab = strpart('          ', 0, &tabstop)
+    let line = substitute(line, '\t', onetab, 'g')
+
+    let line = strpart(line, 0, windowwidth - 2)
+    let fillcharcount = windowwidth - len(line)
+
+    return line . repeat(" ", fillcharcount)
+endfunction " }}}
+set foldtext=FoldText()
+"}}}
+
 
 " Setup Pathogen to manage your plugins
  call pathogen#infect()
 
+" ============================================================================
+" Common tools 
+" ============================================================================
+
+" Nerd Tree
+map <C-n> :NERDTreeToggle<CR>
 
 " ============================================================================
 " Python IDE Setup
@@ -105,11 +133,13 @@ set foldlevel=99
 
 
 " Settings for vim-powerline
+ set rtp+=/usr/lib/python2.7/dist-packages/powerline/bindings/vim
  set laststatus=2
 
 
 " shortcut
  map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+ map <Leader>p Ofmt.Printf()<C-c>
 
  
 " Better navigating through omnicomplete option list
@@ -129,12 +159,9 @@ set foldlevel=99
  inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
  inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
-" Nerd Tree
-map <C-n> :NERDTreeToggle<CR>
 
 
 
-
-
-autocmd InsertEnter * set cul
-autocmd InsertLeave * set nocul
+" ============================================================================
+" GO IDE Setup
+" ============================================================================
