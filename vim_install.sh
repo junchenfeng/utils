@@ -24,21 +24,13 @@ git clone git://github.com/Lokaltog/powerline.git --depth 1
 # ale, a replacement for syntastic in Vim 8. Avoid stuck on error checking
 git clone https://github.com/w0rp/ale.git --depth 1
 
+# jedi, python completion
+git clone git://github.com/davidhalter/jedi-vim.git  --depth 1
+cd ~/.vim/bundle/jedi-vim  
+git submodule update --init --depth 1
 
-# youCompleteMe: an fuzzy auto completion plugin
-# install pre-requisite
-apt-get install build-essential cmake
-apt-get install python-dev python3-dev
-
-# get the package
-git clone --depth 1 git://github.com/Valloric/YouCompleteMe.git 
-cd YouCompleteMe
-git submodule update --init --recursive
-# build
-cd ~/.vim/bundle/YouCompleteMe
-./install.py
-
-
+# vim-go, golang IDE
+git clone git@github.com:fatih/vim-go.git 
 
 # folding
 mkdir -p ~/.vim/ftplugin
