@@ -4,38 +4,17 @@
 mkdir -p ~/.vim/colors && cd ~/.vim/colors
 wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 
-
-# install pathegon
-mkdir -p ~/.vim/autoload ~/.vim/bundle
-curl -so ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-#Now you can install any plugin into a .vim/bundle/plugin-name/ folder
-
-
-### Python IDE
-
-cd ~/.vim/bundle
-
-# nerdtree
-git clone git://github.com/scrooloose/nerdtree.git --depth 1
-
-# power line
-git clone git://github.com/Lokaltog/powerline.git --depth 1
-
-# ale, a replacement for syntastic in Vim 8. Avoid stuck on error checking
-git clone https://github.com/w0rp/ale.git --depth 1
-
-# jedi, python completion
-git clone git://github.com/davidhalter/jedi-vim.git  --depth 1
-cd ~/.vim/bundle/jedi-vim  
-git submodule update --init --depth 1
-
-# vim-go, golang IDE
-git clone git@github.com:fatih/vim-go.git 
-
 # folding
 mkdir -p ~/.vim/ftplugin
 wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
 
 
+# intall packages with vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+cp ~/.vimrc ~/.vimrc_bak
+cp .vimrc ~/.vimrc
+
+vim +PluginInstall +qall
 
 
