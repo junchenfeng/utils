@@ -1,5 +1,5 @@
 ### VIM Basic
-
+set -e
 # install color scheme
 mkdir -p ~/.vim/colors && cd ~/.vim/colors
 wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
@@ -16,5 +16,6 @@ cp ~/.vimrc ~/.vimrc_bak
 cp .vimrc ~/.vimrc
 
 vim +PluginInstall +qall
-
+# need to properly install relevent Go libraries
+vim :GoInstallBinaries
 
