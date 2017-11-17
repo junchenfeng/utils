@@ -24,7 +24,7 @@ Look out for with-python/python3-config-dir
 
 ```
 git clone git@github.com:vim/vim.git --depth 1
-
+cd vim/src
 ./configure --with-features=huge \
             --enable-largefile \
             --disable-netbeans \
