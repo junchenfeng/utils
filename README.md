@@ -19,26 +19,8 @@ echo $?
 echo $?
 sudo make install
 ```
-# Install Vim 8.0
-Look out for with-python/python3-config-dir
 
-```
-git clone git@github.com:vim/vim.git --depth 1
-cd vim/src
-./configure --with-features=huge \
-            --enable-largefile \
-            --disable-netbeans \
-            --enable-pythoninterp \
-            --with-python-config-dir=/data/workspace/junchen/virt_env/py27/lib/python2.7/config \
-            --enable-python3interp=yes \
-            --with-python3-config-dir=/data/workspace/junchen/virt_env/py36/lib/python3.5/config-3.5m/ \
-            --enable-gui=auto \
-            --enable-fail-if-missing \
-            --enable-cscope \
 
-make
-sudo make install
-```
 
 # vim-install.sh
 Lightweight install with Vundle. Plus python folding.

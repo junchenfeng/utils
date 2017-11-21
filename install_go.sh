@@ -8,6 +8,13 @@ curl -O  https://golangtc.com/static/go/$VERSION/go$VERSION.$OS-$ARCH.tar.gz
 tar -C $HOME -xzf go$VERSION.$OS-$ARCH.tar.gz
 mv go go$VERSION
 
+export GOROOT=$HOME/go$VERSION
+export PATH=$PATH:$GOROOT/bin
+export GOPATH=$HOME/go
+
+source ~/.bashrc
+
+# 增加一些golang的包
 mkdir go
 cd go
 mkdir src
@@ -19,8 +26,14 @@ mkdir golang.org
 cd golang.org
 mkdir x
 cd x 
-git clone  git@github.com:golang/net.git --depth 1
-git clone  git@github.com:golang/tools.git --depth 1
-cd ../..
 
-git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
+
+go get -u github.com/golang/tools
+go get -u github.com/golang/net
+
+
+cd $GOPATH/src
+
+mv github.com/golang/tools golang.org/x/tools
+mv github.com/golang/net golang.org/x/net
+

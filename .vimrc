@@ -16,7 +16,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'fatih/vim-go'
 Plugin 'w0rp/ale'
-Plugin 'vim-airline/vim-airline'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -167,8 +167,6 @@ set foldtext=FoldText()
 " let g:jedi#completions_command = "<C-Space>"
 " let g:jedi#rename_command = "<leader>r"
 
-" ale
- let g:airline#extensions#ale#enabled = 1
 
 
 " Better navigating through omnicomplete option list
@@ -195,4 +193,4 @@ set foldtext=FoldText()
 " ============================================================================
 " GO IDE Setup
 " ============================================================================
-let g:go_version_warning = 0
+ let g:airline#extensions#ale#enabled = 0
