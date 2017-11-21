@@ -11,11 +11,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
+
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'fatih/vim-go'
-Plugin 'w0rp/ale'
+
 
 
 " All of your Plugins must be added before the following line
@@ -78,8 +78,7 @@ set fileencodings=utf-8,ucs-bom,cp936,gbk,gb2312,gb18030,big5,latin1
 
 
 " Enable syntax highlighting
-" You need to reload this file for the change to apply
- filetype off
+" You need to reload this file for the change to apply 
  filetype plugin indent on
  syntax on
 
@@ -152,21 +151,11 @@ set foldtext=FoldText()
 
 " Nerd Tree
  map <C-n> :NERDTreeToggle<CR>
+ set modifiable
 
 " ============================================================================
 " Python IDE Setup
 " ============================================================================
-
-
-" jedi-vim 
-" let g:jedi#goto_command = "<leader>d"
-" let g:jedi#goto_assignments_command = "<leader>g"
-" let g:jedi#goto_definitions_command = ""
-" let g:jedi#documentation_command = "K"
-" let g:jedi#usages_command = "<leader>n"
-" let g:jedi#completions_command = "<C-Space>"
-" let g:jedi#rename_command = "<leader>r"
-
 
 
 " Better navigating through omnicomplete option list
@@ -193,4 +182,7 @@ set foldtext=FoldText()
 " ============================================================================
 " GO IDE Setup
 " ============================================================================
- let g:airline#extensions#ale#enabled = 0
+
+
+
+
