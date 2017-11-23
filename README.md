@@ -29,14 +29,12 @@ Lightweight install with Vundle. Plus python folding.
 ## nerdtree
 file system management
 
-## vim-airline
-Simple but useful status report
-
-## ale
-Async syntax check for Vim 8
-
 ## YouCompleteMe
 Autocompletion is the mother or productivity gain
 
 ## vim-go
 IDE for golang
+
+## Synatistic
+Async syntax check for Vim 8. Config vimrc properly to show err check in the gutter lines
+
