@@ -1,4 +1,4 @@
-" Adpot .vimrc file by Martin Brochhaus
+" Vundle config
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -15,6 +15,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-fugitive'
 
 
 
@@ -39,7 +40,6 @@ set fileencodings=utf-8,ucs-bom,cp936,gbk,gb2312,gb18030,big5,latin1
 " Automatic reloading of .vimrc
  autocmd! bufwritepost .vimrc source %
 
-
 " Mouse and backspace
  set mouse=a  " on OSX press ALT and click
  set bs=2     " make backspace behave like normal again
@@ -55,9 +55,6 @@ set fileencodings=utf-8,ucs-bom,cp936,gbk,gb2312,gb18030,big5,latin1
  noremap <Leader>E :qa!<CR>   " Quit all windows
 
 
-" shortcut for common use
- map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
- map <Leader>p Ofmt.Printf()<C-c>
 
  " bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
 " Every unnecessary keystroke that can be saved is good for your health :)
@@ -78,8 +75,6 @@ set fileencodings=utf-8,ucs-bom,cp936,gbk,gb2312,gb18030,big5,latin1
 
 
 " Enable syntax highlighting
-" You need to reload this file for the change to apply 
- filetype plugin indent on
  syntax on
 
 
@@ -118,6 +113,9 @@ set fileencodings=utf-8,ucs-bom,cp936,gbk,gb2312,gb18030,big5,latin1
  set nowritebackup
  set noswapfile
 
+" always show statusline
+ set laststatus=2
+
 
 
 " Folding {{{
@@ -153,10 +151,16 @@ set foldtext=FoldText()
  map <C-n> :NERDTreeToggle<CR>
  set modifiable
 
+" Vim fugitive
+ set statusline+=%{fugitive#statusline()}
+ 
+
 " ============================================================================
 " Python IDE Setup
 " ============================================================================
 
+" shortcut for common use
+ map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " Better navigating through omnicomplete option list
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
@@ -175,15 +179,14 @@ set foldtext=FoldText()
  inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
  inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
-" YCM
- let g:ycm_keep_logfiles = 1
- let g:ycm_log_level = 'debug' 
 
 " ============================================================================
 " GO IDE Setup
 " ============================================================================
 
 
+ map <Leader>p Ofmt.Println()<C-c>
+ map <Leader>pf Ofmt.Printf()<C-c>
 
  set statusline+=%#warningmsg#
  set statusline+=%{SyntasticStatuslineFlag()}
