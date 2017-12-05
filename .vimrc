@@ -56,7 +56,7 @@ set fileencodings=utf-8,ucs-bom,cp936,gbk,gb2312,gb18030,big5,latin1
 
 
 
- " bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
+" bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
 " Every unnecessary keystroke that can be saved is good for your health :)
  map <c-j> <c-w>j
  map <c-k> <c-w>k
@@ -143,6 +143,15 @@ set foldtext=FoldText()
 "}}}
 
 
+" remove trailing space
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+noremap <Leader>w :call TrimWhitespace()<CR>
+
 " ============================================================================
 " Common tools 
 " ============================================================================
@@ -178,6 +187,13 @@ set foldtext=FoldText()
 
  inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
  inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
+
+ " E121,E123,E126,E127,E128 indent error
+ " E501 line too long
+ " E402 import not on top of files
+ " E702 multiple statements on a line
+ " F403 F405 import *
+ let g:syntastic_python_flake8_post_args='--ignore=E121,E123,E126,E127,E128,E501,E402,E702,F403,F405'
 
 
 " ============================================================================
