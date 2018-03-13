@@ -14,8 +14,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
-Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fugitive'
+" Plugin 'fatih/vim-go'
 
 
 
