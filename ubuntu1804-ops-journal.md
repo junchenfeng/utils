@@ -10,18 +10,18 @@ src: https://www.linuxbabe.com/ubuntu/install-google-chrome-ubuntu-18-04-lts
 sudo nano /etc/apt/sources.list.d/google-chrome.list
 (TYPE)deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
 Ctrl+O -> Enter -> Ctrl+X
-wget https://dl.google.com/linux/linux_signing_key.pub
-sudo apt-key add linux_signing_key.pub
-sudo apt update
-sudo apt install google-chrome-stable
+        wget https://dl.google.com/linux/linux_signing_key.pub
+        sudo apt-key add linux_signing_key.pub
+        sudo apt update
+        sudo apt install google-chrome-stable
 
 switchyOmega+gfwlist
 
 # (4) git
 sudo apt-get install git
 NOTE: do ssh-keygen and add it to the github.com settings
-git config --global user.name "Junchen Feng"
-git config --global user.email frankfeng.pku@gmail.com
+        git config --global user.name "Junchen Feng"
+        git config --global user.email frankfeng.pku@gmail.com
 
 # (5) python
 ## install python2
@@ -49,8 +49,11 @@ mkdir git
 cd git
 git clone git@github.com:junchenfeng/utils.git
 cd utils
-sudo sh install_vim8.sh
-sudo sh config_vimrc.sh
+
+        sudo sh install_vim8.sh
+        sudo sh config_vimrc.sh
+
+NOTE: add "export VIMRUNTIME='/usr/share/vim/vim81/'" to ~/.bashrc 
 
 
 # (7) guake

@@ -6,17 +6,17 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'vim-syntastic/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'tpope/vim-fugitive'
-" Plugin 'fatih/vim-go'
-
+Plugin 'ambv/black'
 
 
 " All of your Plugins must be added before the following line

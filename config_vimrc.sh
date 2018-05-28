@@ -16,6 +16,7 @@ cd ~/git/utils
 cp .vimrc ~/.vimrc
 
 vim +PluginInstall +qall
+
 sudo apt-get install build-essential cmake
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py
