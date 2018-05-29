@@ -103,6 +103,9 @@ If you still have troubles, see the config log for further debugging
 		
 		cat src/auto/config.log
 
+**Neither redhat nor src tarball python3 built in vim**
+
+
 ## Install Vim plugins
 
 		

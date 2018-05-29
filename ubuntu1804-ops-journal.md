@@ -4,6 +4,9 @@ install from Ubuntu Software
 # (2) pinyin
 https://blog.csdn.net/rznice/article/details/79841790
 
+sogou pinyin [ref](https://my.oschina.net/inuxor/blog/1791548)
+
+
 # (3) chrome
 src: https://www.linuxbabe.com/ubuntu/install-google-chrome-ubuntu-18-04-lts
 
@@ -18,8 +21,8 @@ now install
         sudo apt-key add linux_signing_key.pub
         sudo apt update
         sudo apt install google-chrome-stable
-
-
+		
+		
 # (4) git
 NOTE: do ssh-keygen and add it to the github.com settings
         
@@ -83,10 +86,11 @@ Type in
 
 
 
+
 # (i) one-password
 onepassword-X, chrome app
 
-# (ii) tim
+# (ii) TIM
 First install crossover
 
         sudo dpkg --add-architecture i386 ; sudo apt-get update
@@ -94,7 +98,8 @@ First install crossover
         wget http://crossover.codeweavers.com/redirect/crossover.deb
         sudo gdebi crossover.deb
 
-Download Tim from tecent.com
+Install TIM with cross-over
 
+**Installed but failed**
 
 
