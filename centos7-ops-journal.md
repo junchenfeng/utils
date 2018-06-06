@@ -150,3 +150,27 @@ Start the service
 Install Packages
         sudo -i R
         install.packages("dplyr")
+		
+# Mongodb
+
+		vi /etc/yum.repos.d/mongodb-org.repo
+		
+输入
+
+		[mongodb-org-3.4]
+		name=MongoDB Repository
+		baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/
+		gpgcheck=1
+		enabled=1
+		gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
+		
+安装
+		yum install mongodb-org
+		 
+启动
+		systemctl start mongod
+
+验证
+		mongo
+		db.help()
+		exit
