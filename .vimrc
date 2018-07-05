@@ -12,11 +12,12 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ambv/black'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'rizzatti/dash.vim'
 
 
 " All of your Plugins must be added before the following line
