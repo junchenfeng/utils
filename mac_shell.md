@@ -39,4 +39,3 @@ latest mysql 8.X is incompatible with mysqlclient
 
     brew install mysql@5.7
     brew switch mysql@5.7 5.7.22
-    brew uninstall mysql; brew reinstall mysql@5.7; brew pin mysql; brew switch mysql 5.7.22
